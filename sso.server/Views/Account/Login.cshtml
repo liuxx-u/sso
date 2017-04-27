@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script type="text/javascript" src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/sso.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            $("#loginBtn").click(function() {
+                    sso.login({
+                        userName: $("#userName").val(),
+                        password: $("#password").val(),
+                        returnUrl: "@ViewBag.ReturnUrl"
+                    });
+                });
+        })
+    </script>
+</head>
+<body>
+<div>
+    我是来自服务端的登陆页：
+    <input id="userName" type="text" placeholder="请输入用户名" />
+    <input id="password" type="password" placeholder="请输入登陆密码" />
+    <button id="loginBtn">登陆</button>
+</div>
+</body>
+</html>
